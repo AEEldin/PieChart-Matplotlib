@@ -115,3 +115,40 @@ plt.legend(title = "The Piechart Legend")
 plt.show() 
 ```
 
+
+### Part6: displaying more than one plot
+
+The subplot() function enables multiple plots to be displayed in the layout of the output figure; the layout is arranged in a table format with rows and columns.
+
+The subplot() function accepts three parameters to describe the layout.
+
+The first argument represents the number of rows
+The second argument represents the number of columns
+The third argument represents the position in the layout
+
+
+```
+import matplotlib.pyplot as plt
+
+values1 = [25,15,25,35]
+displayLabels1 = ["Value 1-1", "Value 2-1", "Value 3-1", "Value 4-1"]
+displayExplode1 = [0, 0.1, 0.2, 0]
+plt.subplot(1, 2, 1)                #the layout is 1 row, 2 columns, and this plot is in the first position
+plt.pie(values1, labels = displayLabels1, explode = displayExplode1)
+plt.title("First plot")             #a title for this plot   
+plt.ylabel("first y-axis")        
+plt.xlabel("first x-axis") 
+
+
+values2 = [25,15,25,35]
+displayLabels2 = ["Value 1-2", "Value 2-2", "Value 3-2", "Value 4-2"]
+displayExplode2 = [0, 0, 0.2, 0.1]
+plt.subplot(1, 2, 2)                #the layout is 1 row, 2 columns, and this plot is in the second position
+plt.pie(values2, labels = displayLabels2, explode = displayExplode2)
+plt.title("Second plot")            #a title for this plot
+plt.ylabel("second y-axis")        
+plt.xlabel("second x-axis") 
+
+plt.suptitle("All plots")           #add one title on the collection
+plt.show()
+```
